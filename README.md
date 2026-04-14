@@ -16,7 +16,6 @@ This project aims to predict whether a client will subscribe to a bank term depo
 ```
 ├── EDA
 ├── Data Preprocessing
-├── Feature Selection
 ├── Model Training
 ├── Evaluation & Analysis
 ```
