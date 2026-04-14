@@ -16,8 +16,8 @@ This project aims to predict whether a client will subscribe to a bank term depo
 ```
 ├── EDA
 ├── Data Preprocessing
-├── Model Training
-├── Evaluation & Analysis
+├── Model Training & Results
+├── Conclustion
 ```
 
 <br>
@@ -104,7 +104,7 @@ By feature selection, we:
 
 <br>
 
-## 3. Model Training
+## 3. Model Training & Results
 From EDA, we identified that the dataset is highly imbalanced (~1:8).
 To address this, we explored two fundamentally different strategies:
 ```
@@ -166,6 +166,27 @@ model = LGBMClassifier(
 ### 3.3 Hyperparamter Optimization
 Using ```Bayesian opimization```, we chose the best hyperparmeter and F1 score.
 <img src='./assets/result.png' width=800>
+
+<br>
+
+## 4. Results
+
+In this project, we identified class imbalance as the core challenge through EDA and designed the entire pipeline around solving it.
+
+Key contributions:
+
+- Discovered imbalance issue through data exploration  
+- Designed a distribution-aware preprocessing pipeline  
+- Implemented a custom SMOTE-based ensemble approach  
+- Improved performance using class-weighted learning and threshold optimization  
+
+Ultimately, we built a model that balances precision and recall effectively, achieving strong performance on imbalanced data.  
+Additionally, we 🏆 achieved the **highest F1-score in class**.🏆
+
+
+
+
+
 
 
 
