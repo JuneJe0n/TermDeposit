@@ -1,9 +1,12 @@
 
-# Term Deposit Pattern Recognition
 <div align="center">
-    **Jiyoon Jeon** · **Minsuh Joo** · **Dabin Choi** · **Yeonseo Choi** · 
-</div>
+<h1> Term Deposit Pattern Recognition </h1>
     
+**Jiyoon Jeon · Minsuh Joo · Dabin Choi · Yeonseo Choi**
+
+
+</div>
+ 
 ## Overview
 This project aims to predict whether a client will subscribe to a bank term deposit using machine learning techniques.
 - Task: Binary classification ```(y ∈ {0,1})```
