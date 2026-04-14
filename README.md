@@ -80,6 +80,39 @@ For features with relatively balanced distributions (e.g., ```education, housing
 ```
 
 ### ► Feature Selection (Stepwise Method)
+After encoding categorical variables, the feature dimension increased significantly (~57 features), which could lead to overfitting and reduced interpretability.
+
+To address this, we implemented a stepwise feature selection method.
+```
+# Core logic
+while True:
+    add feature with lowest p-value (< 0.05)
+    remove feature with highest p-value (> 0.05)
+    evaluate model performance
+```
+
+#### ▹ Implementation Details
+- Statistical Criteria:
+    - p-value (< 0.05): feature significance
+    - AIC / BIC: trade-off between model fit and complexity
+    - Adjusted R²: performance with penalty for unnecessary features
+- Model: OLS (Ordinary Least Squares) via ```statsmodels```
+
+#### ▹ Results
+The final selected features include
+```
+['emp.var.rate', 'default_0', 'poutcome_2', 'default_1', 'month_6', 'month_5', 'euribor3m',
+'month_7', 'poutcome_0', 'poutcome_1', 'contact_0', 'cons.price.idx', 'contact_1', 'month_1',
+'day_of_week_1', 'month_3', 'job_1', 'job_5', 'month_4', 'month_2', 'month_9', 'day_of_week_4',
+'cons.conf.idx', 'campaign', 'job_8', 'job_7', 'job_3']
+```
+
+
+
+
+
+
+
 
 
 
