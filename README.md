@@ -1,8 +1,6 @@
 
 # Term Deposit Pattern Recognition
-💻 [Full Codes](./code.ipynb) <br>
-📄 [Full Report](./report.pdf)
-      
+    
 ## Overview
 This project aims to predict whether a client will subscribe to a bank term deposit using machine learning techniques.
 - Task: Binary classification (y ∈ {0,1})
@@ -10,6 +8,9 @@ This project aims to predict whether a client will subscribe to a bank term depo
 - Evaluation:
   - Performance is measured on a hidden test set 
   - Only part of the test labels are accessible during development
+ 
+💻 [Full Codes](./code.ipynb) <br>
+📄 [Full Report](./report.pdf)
 
 ## Project Structure
 ```
@@ -52,20 +53,13 @@ Based on this, we explored two approaches:<br>
 The entire modeling pipeline was built around solving this issue.
 
 ## 2. Data Preprocessing
-```
-# Preprocessing Pipeline
-1. Replace 'unknown' → NaN
-2. Handle outliers (selectively)
-2. Handle missing values
-3. 
-4. Encode categorical variables
-5. Normalize (zero-centering)
-6. Split train/test
-```
+We designed a comprehensive preprocessing pipeline tailored to the dataset, including missing value and outlier handling, feature encoding, normalization, and feature selection.
+
+To keep this README concise, we highlight only the key design choices, while the full implementation can be found in the [full code](./code.ipynb).
 
 ### ► Handle Missing Values
 We observed missing values in multiple categorical features, including ```job, marital, education, default, housing, loan, cons.conf.idx```<br>
-Rather than applying a single imputation strategy, we designed** feature-specific methods based on data distribution.**
+Rather than applying a single imputation strategy, we designed **feature-specific methods based on data distribution.**
 
 
 
