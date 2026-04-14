@@ -104,7 +104,51 @@ By feature selection, we:
 - Improved model interpretability
 
 
+## 3. Model Training
+From EDA, we identified that the dataset is highly imbalanced (~1:8).
+To address this, we explored two fundamentally different strategies:
+```
+1. Resampling-based methods (balance the data)
+2. Class-weighted learning (adjust model behavior)
+```
+We ultimately selected the second approach, but the first approach provided meaningful insights and experimentation.
+Additionally, we performed ```threshold optimization``` and ```Baysian optimization``` for a better F1 score.
 
+### 3.1 [Approach 1] Resampling + Ensemble
+Balancing the dataset using a single resampling step (e.g., SMOTE) may introduce bias, as one sampled dataset may not represent the full data distribution. Therefore, we decided to ```“Train multiple models on multiple resampled datasets”```
+
+
+#### ► Model Architecture
+```
+1. Apply SMOTE (empirically chosen among various sampling methods)
+2. Generate multiple resampled datasets
+3. Train a model on each dataset
+4. Aggregate predictions 
+```
+```
+# pseudo code
+for i in range(n):
+    X_resampled, y_resampled = SMOTE(random_state=i)
+    
+    model_i = GradientBoostingClassifier(random_state=i)
+    model_i.fit(X_resampled, y_resampled)
+    
+    models.append(model_i)
+
+prob = average([model.predict_proba(X_test) for model in models])
+```
+<br>
+<img src='./assets/architecture.png' width=480><br>
+
+#### ► Threshold Optimization
+Instead of using default threshold (0.5), we optimized it for F1-score:
+```
+precision, recall, thresholds = precision_recall_curve(...)
+f1 = 2 * (precision * recall) / (precision + recall)
+
+best_threshold = thresholds[argmax(f1)]
+y_pred = (prob > best_threshold)
+```
 
 
 
