@@ -51,5 +51,24 @@ Based on this, we explored two approaches:<br>
 ```
 The entire modeling pipeline was built around solving this issue.
 
+## 2. Data Preprocessing
+```
+# Preprocessing Pipeline
+1. Replace 'unknown' → NaN
+2. Handle outliers (selectively)
+2. Handle missing values
+3. 
+4. Encode categorical variables
+5. Normalize (zero-centering)
+6. Split train/test
+```
+
+### ► Handle Missing Values
+We observed missing values in multiple categorical features, including ```job, marital, education, default, housing, loan, cons.conf.idx```<br>
+Rather than applying a single imputation strategy, we designed** feature-specific methods based on data distribution.**
+
+
+
+
 
 
