@@ -39,12 +39,7 @@ This insight directly shaped our approach:
 - ❌ Do not rely on accuracy
 - ✅ Focus on F1-score optimization
 - ✅ Design strategies specifically for class imbalance
-
-Based on this, we explored two approaches:<br>
-```
-1. Resampling-based methods (SMOTE + ensemble) 
-2. Class-weighted learning (LightGBM)
-```
+  
 The entire modeling pipeline was built around solving this issue.
 
 ## 2. Data Preprocessing
