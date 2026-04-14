@@ -22,7 +22,7 @@ This project aims to predict whether a client will subscribe to a bank term depo
 
 ## 1. Data Exploration (EDA)
 Through EDA, we identified a critical issue: <br>
-**The dataset is highly imbalanced, with a ratio of approximately 1 : 8 between positive and negative classes.**
+🚨**The dataset is highly imbalanced, with a ratio of approximately 1 : 8 between positive and negative classes.**
 
 ### Problem of Imabalanced Dataset
 In imbalanced datsets:
@@ -40,10 +40,10 @@ This insight directly shaped our approach:
 - ✅ Focus on F1-score optimization
 - ✅ Design strategies specifically for class imbalance
 
-Based on this, we explored two approaches:
-**1. Resampling-based methods (SMOTE + ensemble)
-2. Class-weighted learning (LightGBM)**
-👉 The entire modeling pipeline was built around solving this issue.
+Based on this, we explored two approaches:<br>
+**1. Resampling-based methods (SMOTE + ensemble) <br>
+2. Class-weighted learning (LightGBM)** <br>
+The entire modeling pipeline was built around solving this issue.
 
 
 
