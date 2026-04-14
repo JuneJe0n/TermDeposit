@@ -1,5 +1,6 @@
 
 # Term Deposit Pattern Recognition
+💻 [Full Codes](./code.ipynb)
 📄 [Full Report](./report.pdf)
       
 ## Overview
@@ -9,9 +10,11 @@ This project aims to predict whether a client will subscribe to a bank term depo
 
 ## Project Structure
 ```
-├── Data Exploration (EDA)
+├── EDA
 ├── Data Preprocessing
 ├── Feature Selection
 ├── Model Training
 ├── Evaluation & Analysis
 ```
+
+# 1. Data Exploration (EDA)
