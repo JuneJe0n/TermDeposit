@@ -20,6 +20,8 @@ This project aims to predict whether a client will subscribe to a bank term depo
 ├── Evaluation & Analysis
 ```
 
+<br>
+
 ## 1. Data Exploration (EDA)
 Through EDA, we identified a critical issue: <br>
 ```The dataset is highly imbalanced, with a ratio of approximately 1 : 8 between positive and negative classes.```
@@ -41,6 +43,8 @@ This insight directly shaped our approach:
 - ✅ Design strategies specifically for class imbalance
   
 The entire modeling pipeline was built around solving this issue.
+
+<br>
 
 ## 2. Data Preprocessing
 We designed a comprehensive preprocessing pipeline tailored to the dataset, including missing value and outlier handling, feature encoding, normalization, and feature selection.
@@ -98,6 +102,7 @@ By feature selection, we:
 - Prevented overfitting
 - Improved model interpretability
 
+<br>
 
 ## 3. Model Training
 From EDA, we identified that the dataset is highly imbalanced (~1:8).
