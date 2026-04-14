@@ -138,7 +138,7 @@ for i in range(n):
 
 prob = average([model.predict_proba(X_test) for model in models])
 ```
-* GradientBoostingClassifier was chosen emperically. <br>
+\* GradientBoostingClassifier was chosen emperically. <br>
 <img src='./assets/architecture.png' width=480>
 
 #### ► Threshold Optimization
@@ -165,7 +165,7 @@ model = LGBMClassifier(
 
 ### 3.3 Hyperparamter Optimization
 Using ```Bayesian opimization```, we chose the best hyperparmeter and F1 score.
-<img src='./assets/result.png' width=480>
+<img src='./assets/result.png' width=800>
 
 
 
