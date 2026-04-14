@@ -58,8 +58,29 @@ We designed a comprehensive preprocessing pipeline tailored to the dataset, incl
 To keep this README concise, we highlight only the key design choices, while the full implementation can be found in the [full code](./code.ipynb).
 
 ### ► Handle Missing Values
-We observed missing values in multiple categorical features, including ```job, marital, education, default, housing, loan, cons.conf.idx```<br>
+We observed missing values in several categorical features.
 Rather than applying a single imputation strategy, we designed **feature-specific methods based on data distribution.**
+
+#### ▹ Distribution-Based Imputation
+For features with skewed distributions (e.g., ```job, marital, default, loan```):
+- Mode imputation would over-amplify dominant categories
+- This could distort the original data distribution<br>
+👉 Therefore, we filled missing values by preserving the original category proportions
+
+#### ▹ KNN-Based Imputation
+For features with relatively balanced distributions (e.g., ```education, housing```):
+- We applied KNN imputation, extending it to categorical data
+```
+# Pipeline
+1. Label encode categorical features
+2. Restore encoded NaN values
+3. Apply KNNImputer
+4. Round outputs → integer
+5. Convert back to categorical values
+```
+
+### ► Feature Selection (Stepwise Method)
+
 
 
 
