@@ -31,6 +31,19 @@ In imbalanced datsets:
       - Low recall for minority class
       - Unbalanced precision/recall trade-off
 
-As a result:
-- **Even if accuracy is high, F1-score remains low because it requires both precision and recall to be balanced.
-**
+As a result: <br>
+**Even if accuracy is high, F1-score remains low because it requires both precision and recall to be balanced.**
+
+### Modeling Strategy
+This insight directly shaped our approach:
+- ❌ Do not rely on accuracy
+- ✅ Focus on F1-score optimization
+- ✅ Design strategies specifically for class imbalance
+
+Based on this, we explored two approaches:
+**1. Resampling-based methods (SMOTE + ensemble)
+2. Class-weighted learning (LightGBM)**
+👉 The entire modeling pipeline was built around solving this issue.
+
+
+
