@@ -28,7 +28,7 @@ The dataset is highly imbalanced,
 with a ratio of approximately 1 : 8 between positive and negative classes.
 ```
 
-### ► Problem of Imabalanced Dataset
+### 1.1 Problem of Imabalanced Dataset
 In imbalanced datsets:
 - One class dominates → model predicts majority class
 - This causes:
@@ -39,7 +39,7 @@ As a result: <br>
 
 **Even if accuracy is high, F1-score remains low because it requires both precision and recall to be balanced.**
 
-### ► Modeling Strategy
+### 1.2 Modeling Strategy
 This insight directly shaped our approach:
 - ❌ Do not rely on accuracy
 - ✅ Focus on F1-score optimization
@@ -57,17 +57,17 @@ We designed a comprehensive preprocessing pipeline tailored to the dataset, incl
 
 To keep this README concise, we highlight only the key design choices, while the full implementation can be found in the [full code](./code.ipynb).
 
-### ► Handle Missing Values
+### 2.1 Handle Missing Values
 We observed missing values in several categorical features.
 Rather than applying a single imputation strategy, we designed **feature-specific methods based on data distribution.**
 
-#### ▹ Distribution-Based Imputation
+#### ► Distribution-Based Imputation
 For features with skewed distributions (e.g., ```job, marital, default, loan```):
 - Mode imputation would over-amplify dominant categories
 - This could distort the original data distribution<br>
 👉 Therefore, we filled missing values by preserving the original category proportions
 
-#### ▹ KNN-Based Imputation
+#### ► KNN-Based Imputation
 For features with relatively balanced distributions (e.g., ```education, housing```):
 - We applied KNN imputation, extending it to categorical data
 ```
@@ -79,7 +79,7 @@ For features with relatively balanced distributions (e.g., ```education, housing
 5. Convert back to categorical values
 ```
 
-### ► Feature Selection (Stepwise Method)
+### 2.1 Stepwise Feature Selection
 After encoding categorical variables, the feature dimension increased significantly (~57 features), which could lead to overfitting and reduced interpretability.
 
 To address this, we implemented a stepwise feature selection method.
@@ -91,22 +91,22 @@ while True:
     evaluate model performance
 ```
 
-#### ▹ Implementation Details
+#### ► Implementation Details
 - Statistical Criteria:
     - p-value (< 0.05): feature significance
     - AIC / BIC: trade-off between model fit and complexity
     - Adjusted R²: performance with penalty for unnecessary features
 - Model: OLS (Ordinary Least Squares) via ```statsmodels```
 
-#### ▹ Results
+#### ► Results
 The final selected features include
 ```
-['emp.var.rate', 'default_0', 'poutcome_2', 'default_1', 'month_6', 'month_5', 'euribor3m',
-'month_7', 'poutcome_0', 'poutcome_1', 'contact_0', 'cons.price.idx', 'contact_1', 'month_1',
-'day_of_week_1', 'month_3', 'job_1', 'job_5', 'month_4', 'month_2', 'month_9', 'day_of_week_4',
-'cons.conf.idx', 'campaign', 'job_8', 'job_7', 'job_3']
+['emp.var.rate', 'default_0', 'poutcome_2', 'default_1', 'month_6', 'month_5', 'euribor3m', 'month_7', 'poutcome_0', 'poutcome_1', 'contact_0', 'cons.price.idx', 'contact_1', 'month_1', 'day_of_week_1', 'month_3', 'job_1', 'job_5', 'month_4', 'month_2', 'month_9', 'day_of_week_4', 'cons.conf.idx', 'campaign', 'job_8', 'job_7', 'job_3']
 ```
-
+By feature selection, we:
+- Reduced high-dimensional feature space (~57 → compact subset)
+- Prevented overfitting
+- Improved model interpretability
 
 
 
