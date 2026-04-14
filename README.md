@@ -1,5 +1,17 @@
 
 # Term Deposit Pattern Recognition
+📄 [Full Report](./report.pdf)
       
-## Project Goal
-The goal of this project is to successfully predict whether a particular client will subscribe to a bank term deposit from the given data (binary classification).
+## Overview
+This project aims to predict whether a client will subscribe to a bank term deposit using machine learning techniques.
+- Task: Binary classification (y ∈ {0,1})
+- Goal: Maximize F1-score
+
+## Project Structure
+```
+├── Data Exploration (EDA)
+├── Data Preprocessing
+├── Feature Selection
+├── Model Training
+├── Evaluation & Analysis
+```
