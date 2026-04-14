@@ -3,7 +3,7 @@
     
 ## Overview
 This project aims to predict whether a client will subscribe to a bank term deposit using machine learning techniques.
-- Task: Binary classification (y ∈ {0,1})
+- Task: Binary classification ```(y ∈ {0,1})```
 - Goal: Maximize F1-score
 - Evaluation:
   - Performance is measured on a hidden test set 
