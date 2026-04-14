@@ -19,16 +19,15 @@ This project aims to predict whether a client will subscribe to a bank term depo
 📄 [Full Report](./report.pdf)
 
 ## Project Structure
-```
-├── EDA
-├── Data Preprocessing
-├── Model Training & Results
-├── Conclustion
-```
+
+1. [EDA](#1-eda)
+2. [Data Preprocessing](#2-data-preprocessing)
+3. [Model Training & Results](#3-model-training--results)
+4. [Conclusion](#4-conclusion)  
 
 <br>
 
-## 1. Data Exploration (EDA)
+## 1. EDA
 Through EDA, we identified a critical issue: <br>
 ```The dataset is highly imbalanced, with a ratio of approximately 1 : 8 between positive and negative classes.```
 
@@ -175,7 +174,7 @@ Using ```Bayesian opimization```, we chose the best hyperparmeter and F1 score.
 
 <br>
 
-## 4. Results
+## 4. Conclusion
 
 In this project, we identified class imbalance as the core challenge through EDA and designed the entire pipeline around solving it.
 
@@ -186,8 +185,8 @@ Key contributions:
 - Implemented a custom SMOTE-based ensemble approach  
 - Improved performance using class-weighted learning and threshold optimization  
 
-Ultimately, we built a model that balances precision and recall effectively, achieving strong performance on imbalanced data.  
-Additionally, we 🏆 achieved the **highest F1-score in class**.🏆
+Ultimately, we built a model that balances precision and recall effectively, achieving strong performance on imbalanced data.  <br>
+And we 🏆 achieved the **highest F1-score in class**.🏆
 
 
 
