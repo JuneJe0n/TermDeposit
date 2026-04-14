@@ -75,7 +75,7 @@ For features with relatively balanced distributions (e.g., ```education, housing
 5. Convert back to categorical values
 ```
 
-### 2.1 Stepwise Feature Selection
+### 2.2 Stepwise Feature Selection
 After encoding categorical variables, the feature dimension increased significantly (~57 features), which could lead to overfitting and reduced interpretability.
 
 To address this, we implemented a stepwise feature selection method.
