@@ -111,14 +111,15 @@ To address this, we explored two fundamentally different strategies:
 1. Resampling-based methods (balance the data)
 2. Class-weighted learning (adjust model behavior)
 ```
-We ultimately selected the second approach, but the first approach provided meaningful insights and experimentation.
-Additionally, we performed ```threshold optimization``` and ```Baysian optimization``` for a better F1 score.
+We ultimately selected the second approach beacause of a higher F1 return, but the first approach provided meaningful insights and experimentation.<br>
+Additionally, we performed ```threshold optimization``` and ```Baysian optimization``` for a better F1 score. <br>
 
 ### 3.1 [Approach 1] Resampling + Ensemble
-Balancing the dataset using a single resampling step (e.g., SMOTE) may introduce bias, as one sampled dataset may not represent the full data distribution. Therefore, we decided to ```“Train multiple models on multiple resampled datasets”```
+Balancing the dataset using a single resampling step (e.g., SMOTE) may introduce bias, as one sampled dataset may not represent the full data distribution. <br>
+Therefore, we decided to ```“Train multiple models on multiple resampled datasets”```
 
 
-#### ► Model Architecture
+#### ► Method
 ```
 1. Apply SMOTE (empirically chosen among various sampling methods)
 2. Generate multiple resampled datasets
@@ -126,7 +127,7 @@ Balancing the dataset using a single resampling step (e.g., SMOTE) may introduce
 4. Aggregate predictions 
 ```
 ```
-# pseudo code
+# pseudocode
 for i in range(n):
     X_resampled, y_resampled = SMOTE(random_state=i)
     
@@ -137,8 +138,8 @@ for i in range(n):
 
 prob = average([model.predict_proba(X_test) for model in models])
 ```
-<br>
-<img src='./assets/architecture.png' width=480><br>
+* GradientBoostingClassifier was chosen emperically. <br>
+<img src='./assets/architecture.png' width=480>
 
 #### ► Threshold Optimization
 Instead of using default threshold (0.5), we optimized it for F1-score:
@@ -150,12 +151,21 @@ best_threshold = thresholds[argmax(f1)]
 y_pred = (prob > best_threshold)
 ```
 
+### 3.2 [Approach 2] Class-Weighted Learning
+Instead of modifying the data, we adjust the learning objective to ```assign higher weights to the samples of the minority class and lower weights to the majority class``` during the training process. .
 
+#### ► Method
+```
+# pseudocode
+model = LGBMClassifier(
+    ...,
+    is_unbalance=True
+)
+```
 
-
-
-
-
+### 3.3 Hyperparamter Optimization
+Using ```Bayesian opimization```, we chose the best hyperparmeter and F1 score.
+<img src='./assets/result.png' width=480>
 
 
 
