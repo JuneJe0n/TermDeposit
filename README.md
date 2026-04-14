@@ -23,10 +23,7 @@ This project aims to predict whether a client will subscribe to a bank term depo
 
 ## 1. Data Exploration (EDA)
 Through EDA, we identified a critical issue: <br>
-```
-The dataset is highly imbalanced,
-with a ratio of approximately 1 : 8 between positive and negative classes.
-```
+```The dataset is highly imbalanced, with a ratio of approximately 1 : 8 between positive and negative classes.```
 
 ### 1.1 Problem of Imabalanced Dataset
 In imbalanced datsets:
@@ -36,8 +33,7 @@ In imbalanced datsets:
       - Unbalanced precision/recall trade-off
 
 As a result: <br>
-
-**Even if accuracy is high, F1-score remains low because it requires both precision and recall to be balanced.**
+```Even if accuracy is high, F1-score remains low because it requires both precision and recall to be balanced.```
 
 ### 1.2 Modeling Strategy
 This insight directly shaped our approach:
@@ -93,9 +89,9 @@ while True:
 
 #### ► Implementation Details
 - Statistical Criteria:
-    - p-value (< 0.05): feature significance
-    - AIC / BIC: trade-off between model fit and complexity
-    - Adjusted R²: performance with penalty for unnecessary features
+    - ```p-value (< 0.05)```: feature significance
+    - ```AIC / BIC:``` trade-off between model fit and complexity
+    - ```Adjusted R²```: performance with penalty for unnecessary features
 - Model: OLS (Ordinary Least Squares) via ```statsmodels```
 
 #### ► Results
